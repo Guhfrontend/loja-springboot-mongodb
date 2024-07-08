@@ -1,10 +1,10 @@
 package com.gustavo.lojamongo.controller;
 
 import com.gustavo.lojamongo.dto.UserDTO;
+import com.gustavo.lojamongo.model.Post;
 import com.gustavo.lojamongo.model.User;
 import com.gustavo.lojamongo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -54,6 +54,11 @@ public class UserController {
         user.setId(id);
         user = userService.update(user);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id){
+        User user = userService.findById(id);
+        return ResponseEntity.ok().body(user.getPosts());
     }
 
 }
