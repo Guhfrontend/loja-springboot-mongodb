@@ -13,13 +13,16 @@ Além disso, adicionamos um método DTO para os usuários e incluímos o encodin
 O projeto também inclui a pesquisa do encoding como o @Query, tratamento de exceções e loops, resultando em uma solução completa e funcional.
 
 ## Camadas Lógicas
-!![Camadas Lógicas](img_1.png)
+!![Camadas Lógicas](https://github.com/Guhfrontend/loja-springboot-mongodb/assets/138324368/475a557c-b2ec-424d-86bc-2f0fbf7c1217)
+
 
 ## Modelo Documentado
-![Modelo Documentado](img_2.png)
+![Modelo Documentado](https://github.com/Guhfrontend/loja-springboot-mongodb/assets/138324368/3320e82a-35af-4ff7-a1cb-ccae6526cd45)
+
 
 ## Instância de domínio
-![Instância de Domínio](img_3.png)
+![Instância de Domínio](https://github.com/Guhfrontend/loja-springboot-mongodb/assets/138324368/5fe0a5a6-9d63-4558-b636-6febdfdc13cc)
+
 
 # Tecnologias utilizadas
 - Java
