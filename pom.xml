@@ -49,7 +49,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-	</dependencies>
+    </dependencies>
 
 	<build>
 		<plugins>
