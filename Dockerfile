@@ -1,18 +1,23 @@
-FROM maven:3.8.5-openjdk-17 AS build
+FROM openjdk:17.0.1-jdk-oracle as build
 
-COPY src /app/src
-COPY pom.xml /app
+WORKDIR /workspace/app
 
-WORKDIR /app
-RUN mvn clean install
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+COPY src src
 
-FROM openjdk:8-jre-alpine
+RUN chmod -R 777 ./mvnw
 
-COPY --from=build /app/target/LojamongoApplication.jar /app/app.jar
+RUN ./mvnw install -DskipTests
+
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+
+FROM openjdk:17.0.1-jdk-oracle
 
 WORKDIR /app
 
 EXPOSE 8080
 
-CMD ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","com/gustavo/lojamongo/LojamongoApplication.jar.jar"]
 
