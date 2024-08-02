@@ -1,4 +1,4 @@
-# WebService Workshop
+# WebService Loja
 
 
 # Sobre o projeto
